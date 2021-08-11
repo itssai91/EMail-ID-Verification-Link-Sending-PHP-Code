@@ -10,7 +10,7 @@
 	<!--fontAwesome-->
 	<link rel="stylesheet" href="assets/fontawesome-free-5.11.2-web/css/all.min.css">
 	<link rel="stylesheet" href="assets/css/custom.css">
-	<title>OTP</title>
+	<title>Email Confirmation Link</title>
 </head>
 
 <body>
@@ -54,7 +54,7 @@ function register_user()
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
 		$token = md5($_POST['email'] . random_int(99, 99999));
-		$link = "<a href='https://biologycraze.com/mail_varification/confirm_mail.php?key=" . $email . "&token=" . $token . "'>Click To Verify Your Email</a>";
+		$link = "<a href='https://example.com/mail_varification/confirm_mail.php?key=" . $email . "&token=" . $token . "'>Click To Verify Your Email</a>";
 
 		require_once 'db_connection.php';
 		$query = "SELECT * FROM `users` WHERE `email` = '$email'";
